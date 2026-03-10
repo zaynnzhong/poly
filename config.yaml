@@ -1,0 +1,26 @@
+polymarket:
+  ws_endpoint: "wss://ws-subscriptions-clob.polymarket.com/ws/market"
+  rest_endpoint: "https://clob.polymarket.com"
+  category_filter: "politics"
+  market_refresh_interval: 300
+
+llm:
+  provider: "claude"
+  claude_api_key: ""
+  gemini_api_key: ""
+  auto_pair_on_new_market: true
+
+engine:
+  min_profit_threshold: 0.05
+  kelly_max_depth_ratio: 0.5
+  sim_initial_balance: 10000
+  leg2_recheck_delay: 0.5
+
+storage:
+  main_db: "data/main.db"
+  snapshots_dir: "data/snapshots/"
+  archive_after_days: 7
+
+web:
+  host: "127.0.0.1"
+  port: 8080
