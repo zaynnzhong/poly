@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymarket 套利监控</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Polymarket 套利监控</h1>
+        <div id="status-bar">
+            <span id="ws-status">⏳ 连接中...</span>
+            <span id="market-count">市场: -</span>
+            <span id="uptime">运行: -</span>
+        </div>
+    </header>
+    <div class="layout">
+        <nav>
+            <a href="#" data-page="dashboard" class="active">Dashboard</a>
+            <a href="#" data-page="markets">Markets</a>
+            <a href="#" data-page="relations">Relations</a>
+            <a href="#" data-page="signals">Signals</a>
+            <a href="#" data-page="trades">Trades</a>
+        </nav>
+        <main>
+            <section id="page-dashboard">
+                <div class="cards">
+                    <div class="card"><h3>监控市场</h3><p id="stat-markets">-</p></div>
+                    <div class="card"><h3>活跃约束</h3><p id="stat-relations">-</p></div>
+                    <div class="card"><h3>今日信号</h3><p id="stat-violations">-</p></div>
+                    <div class="card"><h3>今日交易</h3><p id="stat-trades">-</p></div>
+                    <div class="card accent"><h3>累计模拟盈亏</h3><p id="stat-profit">-</p></div>
+                </div>
+                <h2>最近信号</h2>
+                <table id="recent-signals"><thead><tr>
+                    <th>时间</th><th>偏差</th><th>信号</th>
+                </tr></thead><tbody></tbody></table>
+            </section>
+            <section id="page-markets" class="hidden">
+                <h2>监控中的市场</h2>
+                <table id="market-table"><thead><tr>
+                    <th>Slug</th><th>问题</th><th>最新价</th><th>更新时间</th>
+                </tr></thead><tbody></tbody></table>
+            </section>
+            <section id="page-relations" class="hidden">
+                <h2>逻辑约束</h2>
+                <div class="tabs">
+                    <button data-filter="pending" class="active">待审核</button>
+                    <button data-filter="approved">已通过</button>
+                    <button data-filter="">全部</button>
+                </div>
+                <table id="relation-table"><thead><tr>
+                    <th>ID</th><th>Market A</th><th>Market B</th><th>关系</th><th>说明</th><th>操作</th>
+                </tr></thead><tbody></tbody></table>
+            </section>
+            <section id="page-signals" class="hidden">
+                <h2>套利信号历史</h2>
+                <table id="signal-table"><thead><tr>
+                    <th>时间</th><th>P(A)</th><th>P(B)</th><th>偏差</th><th>信号</th>
+                </tr></thead><tbody></tbody></table>
+            </section>
+            <section id="page-trades" class="hidden">
+                <h2>模拟交易记录</h2>
+                <table id="trade-table"><thead><tr>
+                    <th>时间</th><th>Leg1</th><th>Leg2</th><th>利润</th><th>状态</th>
+                </tr></thead><tbody></tbody></table>
+            </section>
+        </main>
+    </div>
+    <footer id="log-bar">最近日志加载中...</footer>
+    <script src="/static/app.js"></script>
+</body>
+</html>

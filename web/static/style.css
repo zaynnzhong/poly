@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'SF Mono', 'Menlo', monospace; background: #0a0a0f; color: #e0e0e0; font-size: 13px; }
+header { background: #12121a; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e1e2e; }
+header h1 { font-size: 16px; color: #7c7cff; }
+#status-bar span { margin-left: 16px; color: #888; font-size: 12px; }
+.layout { display: flex; height: calc(100vh - 80px); }
+nav { width: 140px; background: #12121a; padding: 16px 0; border-right: 1px solid #1e1e2e; }
+nav a { display: block; padding: 8px 20px; color: #888; text-decoration: none; font-size: 13px; }
+nav a.active, nav a:hover { color: #7c7cff; background: #1a1a2e; }
+main { flex: 1; padding: 20px; overflow-y: auto; }
+section.hidden { display: none; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.card { background: #16161f; border: 1px solid #1e1e2e; border-radius: 8px; padding: 16px; }
+.card h3 { font-size: 11px; color: #666; margin-bottom: 8px; text-transform: uppercase; }
+.card p { font-size: 24px; font-weight: bold; color: #e0e0e0; }
+.card.accent p { color: #4caf50; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th { text-align: left; padding: 8px; color: #666; font-size: 11px; text-transform: uppercase; border-bottom: 1px solid #1e1e2e; }
+td { padding: 8px; border-bottom: 1px solid #111; font-size: 12px; }
+tr:hover { background: #16161f; }
+.tabs { margin-bottom: 12px; }
+.tabs button { background: #1a1a2e; border: 1px solid #2a2a3e; color: #888; padding: 6px 14px; margin-right: 4px; cursor: pointer; border-radius: 4px; font-size: 12px; }
+.tabs button.active { color: #7c7cff; border-color: #7c7cff; }
+button.approve { background: #1a3a1a; color: #4caf50; border: 1px solid #2a5a2a; padding: 4px 10px; cursor: pointer; border-radius: 3px; margin-right: 4px; }
+button.reject { background: #3a1a1a; color: #f44336; border: 1px solid #5a2a2a; padding: 4px 10px; cursor: pointer; border-radius: 3px; }
+footer { background: #0d0d14; padding: 8px 24px; font-size: 11px; color: #555; border-top: 1px solid #1e1e2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
